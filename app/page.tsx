@@ -1,24 +1,45 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { FiArrowRight } from 'react-icons/fi'
 import PageLayout from '@/components/PageLayout'
 
 export default function Home() {
   return (
     <PageLayout>
-      {/* Additional background element for homepage */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      {/* Ana Sayfa icon in top-right corner */}
+      {/* <div className="absolute top-20 right-20 w-32 h-32 opacity-80">
+        <Image 
+          src="/Ana_Sayfa_icon-removebg-preview.png" 
+          alt="Ana Sayfa Icon" 
+          width={128} 
+          height={128} 
+          className="w-full h-full object-contain"
+        />
+      </div> */}
       
       {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
           {/* Left Side - Text Content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-secondary-900 leading-tight">
+              <h1 style={{fontSize: '2.5rem'}} className="text-2xl md:text-4xl lg:text-5xl font-medium text-secondary-900 leading-tight">
                 Teknolojinin kalbinde;
                 <br />
-                Artık <span className="text-primary-600">biri</span> var!
+                <span style={{marginTop: '10px', marginLeft: '20px'}} className="inline-flex items-center gap-2">
+                  Artık
+                  <Image
+                    src="/logo__siyah_-removebg-preview.png"
+                    alt="Biri"
+                    width={130}
+                    height={40}
+                    
+                    // className="inline-block align-middle"
+                  />
+                  var!
+                </span>
               </h1>
-              <p className="text-xl md:text-2xl text-secondary-600 leading-relaxed max-w-2xl">
+
+              <p style={{fontSize: '20px'}} className="text-xl md:text-2xl text-secondary-600 leading-relaxed max-w-2xl">
                 Geleceğin teknolojileri, hayatınızı bugün kolaylaştırsın!
               </p>
             </div>
@@ -34,54 +55,15 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Side - Smartphone Visual */}
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Hands holding smartphone */}
-              <div className="relative z-10">
-                {/* Smartphone */}
-                <div className="w-64 h-96 bg-gradient-to-br from-rose-gold to-copper rounded-3xl shadow-2xl relative overflow-hidden">
-                  {/* Screen */}
-                  <div className="absolute inset-2 bg-black rounded-2xl overflow-hidden">
-                    {/* Digital circuit patterns */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700">
-                      {/* Circuit lines */}
-                      <div className="absolute top-4 left-4 w-16 h-0.5 bg-blue-400"></div>
-                      <div className="absolute top-4 left-4 w-0.5 h-16 bg-blue-400"></div>
-                      <div className="absolute top-4 right-4 w-16 h-0.5 bg-blue-400"></div>
-                      <div className="absolute top-4 right-4 w-0.5 h-16 bg-blue-400"></div>
-                      <div className="absolute bottom-4 left-4 w-16 h-0.5 bg-blue-400"></div>
-                      <div className="absolute bottom-4 left-4 w-0.5 h-16 bg-blue-400"></div>
-                      <div className="absolute bottom-4 right-4 w-16 h-0.5 bg-blue-400"></div>
-                      <div className="absolute bottom-4 right-4 w-0.5 h-16 bg-blue-400"></div>
-                      
-                      {/* Central radar/data interface */}
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-24 h-24 border-2 border-blue-400 rounded-full animate-pulse"></div>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 border-2 border-blue-300 rounded-full animate-ping"></div>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-blue-400 rounded-full"></div>
-                      </div>
-                      
-                      {/* Additional circuit elements */}
-                      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-blue-300 rounded-full"></div>
-                      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-blue-300 rounded-full"></div>
-                      <div className="absolute top-1/2 left-8 transform -translate-y-1/2 w-2 h-2 bg-blue-300 rounded-full"></div>
-                      <div className="absolute top-1/2 right-8 transform -translate-y-1/2 w-2 h-2 bg-blue-300 rounded-full"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Home button */}
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gray-600 rounded-full"></div>
-                </div>
-                
-                {/* Hands (simplified representation) */}
-                <div className="absolute -bottom-4 -left-4 w-20 h-12 bg-red-800 rounded-full opacity-80 transform rotate-12"></div>
-                <div className="absolute -bottom-4 -right-4 w-20 h-12 bg-red-800 rounded-full opacity-80 transform -rotate-12"></div>
-              </div>
-              
-              {/* Subtle shadow */}
-              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-48 h-8 bg-black opacity-20 rounded-full blur-xl"></div>
-            </div>
+          {/* Right Side - Ana Sayfa Görsel */}
+          <div className="absolute bottom-500px right-0">
+            <Image 
+              src="/Ana_Sayfa_icon-removebg-preview.png" 
+              alt="Ana Sayfa Görsel" 
+              width={650}   
+              height={350} 
+              // className="w-auto h-auto max-w-md"
+            />
           </div>
         </div>
       </PageLayout>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { FiMenu, FiX } from 'react-icons/fi'
 
@@ -42,12 +43,14 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex flex-col items-start">
-            <span className="text-2xl md:text-3xl font-bold text-primary-600" style={{ fontFamily: 'Inter, sans-serif' }}>
-              biri
-            </span>
-            <span className="text-xs md:text-sm font-medium text-secondary-700 uppercase tracking-wide">
-              İLERİ TEKNOLOJİ A.Ş.
-            </span>
+          <Image 
+              src="/logo_-removebg-preview.png" 
+              alt="Biri Logo" 
+              width={180}   
+              height={65}   
+          />
+
+            
           </Link>
 
           {/* Desktop Navigation - Centered */}
@@ -65,7 +68,6 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-
           </div>
 
           {/* Mobile Menu Button */}
@@ -96,7 +98,6 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-
             </div>
           </div>
         )}
