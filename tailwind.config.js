@@ -144,6 +144,10 @@ module.exports = {
         'gradient-forest': 'linear-gradient(45deg, #a8edea 0%, #fed6e3 100%)',
         'gradient-cosmic': 'linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%)',
       },
+      boxShadow: {
+        '3xl': '0 35px 60px -12px rgba(0, 0, 0, 0.25)',
+        '4xl': '0 50px 80px -20px rgba(0, 0, 0, 0.3)',
+      },
     },
   },
   plugins: [],
