@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   html {
@@ -16,15 +16,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transform hover:scale-105 hover:shadow-lg;
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
   }
   
   .btn-secondary {
-    @apply bg-secondary-100 hover:bg-secondary-200 text-secondary-800 font-medium py-3 px-6 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2 transform hover:scale-105 hover:shadow-lg;
+    @apply bg-secondary-100 hover:bg-secondary-200 text-secondary-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
   }
   
   .input-field {
-    @apply w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 hover:shadow-md;
+    @apply w-full px-4 py-3 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200;
   }
   
   .section-padding {
@@ -38,102 +38,11 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-primary-800 bg-clip-text text-transparent animate-gradient-shift;
-  }
-  
-  .text-gradient-animated {
-    @apply bg-gradient-to-r from-primary-600 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-flow bg-[length:200%_200%];
-  }
-  
-  .gradient-border {
-    @apply relative bg-white rounded-lg p-1;
-    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
-    background-size: 300% 300%;
-    animation: gradientShift 3s ease infinite;
-  }
-  
-  .gradient-border::before {
-    content: '';
-    @apply absolute inset-0 rounded-lg;
-    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
-    background-size: 300% 300%;
-    animation: gradientShift 3s ease infinite;
-    z-index: -1;
-  }
-  
-  .glass-effect {
-    @apply backdrop-blur-md bg-white/20 border border-white/30 shadow-xl;
-  }
-  
-  .glass-card {
-    @apply backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500;
-  }
-  
-  .floating-element {
-    @apply animate-float;
-  }
-  
-  .glow-effect {
-    @apply animate-glow;
-  }
-  
-  .shimmer-effect {
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    background-size: 200% 100%;
-    @apply animate-shimmer;
-  }
-  
-  .morphing-blob {
-    @apply animate-morph;
-  }
-  
-  .gradient-mesh-bg {
-    background: linear-gradient(45deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    background-size: 400% 400%;
-    @apply animate-gradient-flow;
-    will-change: background-position;
-  }
-  
-  .gradient-aurora-bg {
-    background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
-    background-size: 400% 400%;
-    @apply animate-gradient-shift;
-  }
-  
-  .gradient-ocean-bg {
-    background: linear-gradient(45deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    background-size: 400% 400%;
-    @apply animate-gradient-flow;
-  }
-  
-  .gradient-sunset-bg {
-    background: linear-gradient(45deg, #fa709a 0%, #fee140 100%);
-    background-size: 400% 400%;
-    @apply animate-gradient-shift;
-  }
-  
-  .gradient-forest-bg {
-    background: linear-gradient(45deg, #a8edea 0%, #fed6e3 100%);
-    background-size: 400% 400%;
-    @apply animate-gradient-flow;
-  }
-  
-  .gradient-cosmic-bg {
-    background: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%);
-    background-size: 400% 400%;
-    @apply animate-gradient-shift;
+    @apply bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent;
   }
   
   .animation-delay-2000 {
     animation-delay: 2s;
-  }
-  
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-  
-  .animation-delay-6000 {
-    animation-delay: 6s;
   }
   
   .hexagon {
@@ -141,31 +50,11 @@
     height: 60px;
     position: relative;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
   }
   
   .hexagon:hover {
-    transform: scale(1.15) rotate(15deg);
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
-    filter: brightness(1.2);
-  }
-  
-  .gradient-text-shimmer {
-    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #667eea);
-    background-size: 300% 100%;
-    @apply bg-clip-text text-transparent animate-shimmer;
-  }
-  
-  .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  }
-  
-  .smooth-transition {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
   }
 } 
