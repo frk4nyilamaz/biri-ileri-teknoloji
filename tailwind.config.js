@@ -44,7 +44,7 @@ module.exports = {
         'blob': 'blob 7s infinite',
         'gradient-shift': 'gradientShift 8s ease-in-out infinite',
         'gradient-pulse': 'gradientPulse 4s ease-in-out infinite',
-        'gradient-flow': 'gradientFlow 12s ease-in-out infinite',
+        'gradient-flow': 'gradientFlow 20s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
         'shimmer': 'shimmer 2.5s linear infinite',
