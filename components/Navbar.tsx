@@ -35,68 +35,73 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      isScrolled 
+        ? 'glass-effect shadow-2xl border-b border-white/20' 
+        : 'bg-transparent'
     }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex flex-col items-start">
-            <span className="text-2xl md:text-3xl font-bold text-primary-600" style={{ fontFamily: 'Inter, sans-serif' }}>
+          {/* Enhanced Logo with gradient */}
+          <Link href="/" className="flex flex-col items-start group">
+            <span className="text-2xl md:text-3xl font-bold text-gradient-animated bg-[length:200%_200%] animate-gradient-flow transition-all duration-300 group-hover:scale-105" style={{ fontFamily: 'Inter, sans-serif' }}>
               biri
             </span>
-            <span className="text-xs md:text-sm font-medium text-secondary-700 uppercase tracking-wide">
+            <span className="text-xs md:text-sm font-medium text-secondary-700 uppercase tracking-wide transition-all duration-300 group-hover:text-primary-600">
               İLERİ TEKNOLOJİ A.Ş.
             </span>
           </Link>
 
-          {/* Desktop Navigation - Centered */}
+          {/* Desktop Navigation - Centered with enhanced effects */}
           <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`relative text-sm font-medium transition-all duration-300 hover-lift ${
                   isActive(item.href)
-                    ? 'text-primary-600 underline underline-offset-4'
+                    ? 'text-gradient-animated bg-[length:200%_200%] animate-gradient-flow'
                     : 'text-secondary-600 hover:text-primary-600'
                 }`}
               >
                 {item.name}
+                {isActive(item.href) && (
+                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 to-purple-500 rounded-full animate-pulse"></div>
+                )}
+                <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary-400 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               </Link>
             ))}
-
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Enhanced Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-secondary-600 hover:text-primary-600 hover:bg-secondary-100 transition-colors duration-200"
+            className="md:hidden p-3 rounded-xl text-secondary-600 hover:text-primary-600 hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50 transition-all duration-300 hover:shadow-lg transform hover:scale-105"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Enhanced Mobile Navigation with glass effect */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-secondary-200 bg-white">
+          <div className="md:hidden glass-effect border-t border-white/20 rounded-b-2xl shadow-2xl">
             <div className="px-4 py-6 space-y-4">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block text-base font-medium transition-colors duration-200 ${
+                  className={`block text-base font-medium transition-all duration-300 hover-lift p-3 rounded-xl ${
                     isActive(item.href)
-                      ? 'text-primary-600 underline underline-offset-4'
-                      : 'text-secondary-600 hover:text-primary-600'
+                      ? 'text-gradient-animated bg-[length:200%_200%] animate-gradient-flow bg-gradient-to-r from-primary-50 to-purple-50'
+                      : 'text-secondary-600 hover:text-primary-600 hover:bg-gradient-to-r hover:from-primary-50 hover:to-purple-50'
                   }`}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {item.name}
                 </Link>
               ))}
-
             </div>
           </div>
         )}
