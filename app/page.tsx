@@ -6,16 +6,7 @@ import PageLayout from '@/components/PageLayout'
 export default function Home() {
   return (
     <PageLayout>
-      {/* Ana Sayfa icon in top-right corner */}
-      {/* <div className="absolute top-20 right-20 w-32 h-32 opacity-80">
-        <Image 
-          src="/Ana_Sayfa_icon-removebg-preview.png" 
-          alt="Ana Sayfa Icon" 
-          width={128} 
-          height={128} 
-          className="w-full h-full object-contain"
-        />
-      </div> */}
+      
       
       {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
@@ -56,13 +47,13 @@ export default function Home() {
           </div>
 
           {/* Right Side - Ana Sayfa Görsel */}
-          <div className="absolute bottom-500px right-0">
+          <div className="absolute bottom-7 right-0 z-10">
             <Image 
-              src="/Ana_Sayfa_icon-removebg-preview.png" 
+              src="/kadin_eli_son.png" 
               alt="Ana Sayfa Görsel" 
-              width={650}   
+              width={850}   
               height={350} 
-              // className="w-auto h-auto max-w-md"
+              className="mix-blend-screen filter brightness-120 contrast-120 saturate-150"
             />
           </div>
         </div>
