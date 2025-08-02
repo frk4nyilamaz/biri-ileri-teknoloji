@@ -10,9 +10,9 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <PageLayout>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start min-h-[80vh]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start min-h-[80vh] ">
         {/* Left Column - Contact Form */}
-        <div  >
+        <div>
           <form
             action="https://formsubmit.co/furkan.yilmaz2003@hotmail.com"
             method="POST"
@@ -25,7 +25,7 @@ export default function ContactPage() {
             <input type="hidden" name="_template" value="table" />
 
             {/* Name Field */}
-            <div className="relative">
+            <div className="relative" style={{marginBottom: '12px'}}>
               <div  style={{marginBottom: '15px'}}>
                 <label htmlFor="name" className="text-sm font-bold text-secondary-700">
                   Adınız:
@@ -37,13 +37,13 @@ export default function ContactPage() {
                 name="name"
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 bg-white"
-                placeholder="Adınızı girin"
+                
               />
             </div>
 
             {/* Phone Field */}
-            <div className="relative">
-              <div>
+            <div className="relative" style={{marginBottom: '12px'}}>
+              <div style={{marginBottom: '15px'}}>
                 <label htmlFor="phone" className="text-sm font-bold text-secondary-700">
                   Telefon numaranız:
                 </label>
@@ -54,13 +54,13 @@ export default function ContactPage() {
                 name="phone"
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 bg-white"
-                placeholder="Telefon numaranızı girin"
+                
               />
             </div>
 
             {/* Email Field */}
-            <div className="relative">
-              <div>
+            <div className="relative" style={{marginBottom: '12px'}}>
+              <div style={{marginBottom: '15px'}}>
                 <label htmlFor="email" className="text-sm font-bold text-secondary-700">
                   e-posta adresiniz:
                 </label>
@@ -71,13 +71,13 @@ export default function ContactPage() {
                 name="email"
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 bg-white"
-                placeholder="E-posta adresinizi girin"
+                
               />
             </div>
 
             {/* Message Field */}
-            <div className="relative">
-              <div>
+            <div className="relative" style={{marginBottom: '1px'}}>
+              <div style={{marginBottom: '15px'}}>
                 <label htmlFor="message" className="text-sm font-bold text-secondary-700">
                   Mesajınız:
                 </label>
@@ -88,18 +88,18 @@ export default function ContactPage() {
                 required
                 rows={5}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 resize-none bg-white"
-                placeholder="Mesajınızı yazın..."
+                
               />
             </div>
 
             {/* Submit Button */}
-            <div className="pt-4">
+            <div className="pt-4 mb-7">
               <button
                 type="submit"
                 className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center justify-center text-lg uppercase tracking-wide"
               >
                 GÖNDER
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="ml-2 w-5 h-5 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -108,7 +108,7 @@ export default function ContactPage() {
         </div>
 
         {/* Right Column - Contact Info */}
-        <div className="flex flex-col justify-center items-center lg:items-start space-y-8">
+        <div className="flex flex-col justify-center items-center lg:items-start space-y-8 mt-12 ml-10">
           <div className="text-center lg:text-left">
             <p className="text-lg text-secondary-800 leading-relaxed">
               Veya{' '}
@@ -125,6 +125,13 @@ export default function ContactPage() {
           {/* Resim için yer bırakıldı */}
           <div className="mt-8">
             {/* Buraya resim eklenecek */}
+            <Image 
+            src="/conatactUs.png" 
+            alt="Contact Us" 
+            width={550} 
+            height={475}
+            style={{marginTop: '100px'}}
+            />
           </div>
         </div>
       </div>

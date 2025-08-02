@@ -62,7 +62,7 @@ export default function ManagementPage() {
         </div>
 
         {/* Mehmet Ali Bilen Card */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 z-0">
           <div className="text-center lg:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-4 uppercase tracking-wide">
               MEHMET ALİ BİLEN
@@ -98,6 +98,16 @@ export default function ManagementPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Management Görsel - En Alta Fixlenmiş */}
+      <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2">
+        <Image 
+          src="/management.png" 
+          alt="Management" 
+          width={1500} 
+          height={750} 
+        />
       </div>
 
       {/* Yönetim Görsel */}

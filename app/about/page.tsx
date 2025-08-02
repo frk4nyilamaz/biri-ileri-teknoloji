@@ -21,11 +21,11 @@ export default function AboutPage() {
         />
       </div> */}
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mr-25 mt-12">
         {/* Left Column - Text Content (2/3 width) */}
-        <div className="lg:col-span-2 space-y-8">
-          <div className="space-y-6 text-secondary-800 leading-relaxed">
-            <p className="text-lg">
+        <div className="lg:col-span-2 space-y-6">
+          <div className="space-y-4 text-secondary-800 leading-relaxed">
+            <p className="text-lg text-justify">
             <strong>Biri İleri Teknoloji A.Ş.</strong>, dijital dönüşümün hızla ilerlediği
             günümüzde, sektör odaklı çözümler geliştirmek üzere yola çıkan
             yenilikçi bir teknoloji girişimidir. Ar-Ge çalışmalarına 2024 yılı
@@ -37,14 +37,11 @@ export default function AboutPage() {
             style={{ marginLeft: '5px', marginBottom: '5px'}} 
             className="inline-block align-middle"
             />
-
-
-            
             , 2025 yılının Temmuz ayında şirketleşme
             sürecini tamamlamıştır.
             </p>
             
-            <p className="text-lg">
+            <p className="text-lg text-justify" style={{marginTop: '30px'}}>
             Mobil uygulamalar öncelikli olmak üzere; iş süreçlerini
               kolaylaştıran, verimliliği artıran ve modern teknolojileri hayatın
               her alanına entegre eden çözümler geliştiriyoruz. Yalnızca mobil
@@ -53,7 +50,7 @@ export default function AboutPage() {
               sadeleştiriyoruz.
             </p>
             
-            <p className="text-lg">
+            <p className="text-lg text-justify" > 
             Amacımız; teknolojiyi sadece üretmek değil, aynı zamanda
             anlamlı ve sürdürülebilir biçimde işletmelere ve bireylere entegre
             etmektir. Bu doğrultuda, yalınlık ilkesinden ödün vermeden
@@ -65,10 +62,11 @@ export default function AboutPage() {
         {/* Right Column - Hakkımızda Görsel (1/3 width) */}
         <div className="lg:col-span-1 relative">
           <Image 
-            src="/Hakkimizda_Icon-removebg-preview.png" 
+            src="/about.png" 
             alt="Hakkımızda Görsel" 
             width={300} 
             height={400} 
+            style={{marginTop: '150px'}}
             className="w-full h-auto"
           />
         </div>
